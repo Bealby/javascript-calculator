@@ -30,6 +30,17 @@ function writeToLog(
 }
 
 function calculateResult(calculationType) {
+
+    // If not met return no value. Checks if every sub condition is not met.
+    if (
+        calculationType !== 'ADD' && // IF-NOT...AND
+        calculationType !== 'SUBTRACT' &&
+        calculationType !== 'MULTIPLY' &&
+        calculationType !== 'DIVIDE'
+    ) {
+        return;
+    }
+
     const enteredNumber = getUserNumberInput();
     const initialResult = currentResult;
     let mathOperator;
